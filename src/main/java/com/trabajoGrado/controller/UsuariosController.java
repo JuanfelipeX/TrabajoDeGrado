@@ -52,5 +52,4 @@ public class UsuariosController {
     public void update(@RequestBody Usuarios usuarios) {
         usuariosService.save(usuarios);
     }
-
 }
