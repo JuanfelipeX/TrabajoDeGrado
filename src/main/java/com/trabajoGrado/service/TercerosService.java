@@ -4,12 +4,12 @@
  */
 package com.trabajoGrado.service;
 
-import com.trabajoGrado.model.Usuarios;
-import com.trabajoGrado.repository.UsuariosRepository;
+import com.trabajoGrado.model.Terceros;
 import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import com.trabajoGrado.repository.TercerosRepository;
 
 /**
  *
@@ -18,18 +18,18 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class UsuariosService {
-    private final UsuariosRepository usuariosRepository;
+public class TercerosService {
+    private final TercerosRepository usuariosRepository;
     
-    public void save(Usuarios usuarios){
+    public void save(Terceros usuarios){
         usuariosRepository.save(usuarios);
     }
     
-    public List<Usuarios> findAll(){
+    public List<Terceros> findAll(){
         return usuariosRepository.findAll();
     } 
     
-    public Optional<Usuarios> findById(Integer id){
+    public Optional<Terceros> findById(Integer id){
         return usuariosRepository.findById(id);
     }
     

@@ -12,9 +12,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  * @author pipes
  */
-@Document(value = "Usuarios")
+@Document(value = "Terceros")
 @Data
-public class Usuarios {
+public class Terceros {
     @Id
     private Integer id;
     private String nombres;
