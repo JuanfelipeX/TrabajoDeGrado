@@ -15,26 +15,25 @@ import com.trabajoGrado.repository.TercerosRepository;
  *
  * @author pipes
  */
-
 @Service
 @RequiredArgsConstructor
 public class TercerosService {
-    private final TercerosRepository usuariosRepository;
-    
-    public void save(Terceros usuarios){
-        usuariosRepository.save(usuarios);
+
+    private final TercerosRepository tercerosRepository;
+
+    public void save(Terceros terceros) {
+        tercerosRepository.save(terceros);
     }
-    
-    public List<Terceros> findAll(){
-        return usuariosRepository.findAll();
-    } 
-    
-    public Optional<Terceros> findById(Integer id){
-        return usuariosRepository.findById(id);
+
+    public List<Terceros> findAll() {
+        return tercerosRepository.findAll();
     }
-    
-    public void deleteById(Integer id){
-        usuariosRepository.deleteById(id);
+
+    public Optional<Terceros> findById(Integer id) {
+        return tercerosRepository.findById(id);
     }
-    
+
+    public void deleteById(Integer id) {
+        tercerosRepository.deleteById(id);
+    }
 }

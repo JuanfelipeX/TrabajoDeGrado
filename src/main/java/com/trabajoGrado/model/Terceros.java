@@ -4,8 +4,14 @@
  */
 package com.trabajoGrado.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -14,12 +20,19 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @Document(value = "Terceros")
 @Data
+@Table(name = "Terceros")
 public class Terceros {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
     private String nombres;
     private String apellidos;
     private String email;
-    private Integer edad;
-    
+    private String genero;
+    private Integer telefono;
+    private String pais;
+
+    private Usuarios usuarios;
 }
