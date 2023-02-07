@@ -11,6 +11,7 @@ import com.trabajoGrado.service.UsuariosService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,6 +33,7 @@ public class UsuariosController {
 
     private final UsuariosService usuariosService;
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/usuarios")
     public void save(@RequestBody Usuarios usuarios) {
         usuariosService.save(usuarios);
@@ -46,12 +48,12 @@ public class UsuariosController {
     }
 
     @GetMapping("/usuarios/{id}")
-    public Usuarios findById(@PathVariable Integer id) {
+    public Usuarios findById(@PathVariable String id) {
         return usuariosService.findById(id).get();
     }
-
+    
     @DeleteMapping("/usuarios/{id}")
-    public void deleteById(@PathVariable Integer id) {
+    public void deleteById(@PathVariable String id) {
         usuariosService.deleteById(id);
     }
 
