@@ -29,11 +29,11 @@ public class UsuariosService {
         return usuariosRepository.findAll();
     }
 
-    public Optional<Usuarios> findById(Integer id) {
+    public Optional<Usuarios> findById(String id) {
         return usuariosRepository.findById(id);
     }
-
-    public void deleteById(Integer id) {
+    
+    public void deleteById(String id) {
         usuariosRepository.deleteById(id);
     }
 }
