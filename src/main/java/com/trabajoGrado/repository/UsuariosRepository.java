@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  * @author pipes
  */
 @Repository
-public interface UsuariosRepository extends MongoRepository<Usuarios, Integer> {
+public interface UsuariosRepository extends MongoRepository<Usuarios, String> {
 
 }
