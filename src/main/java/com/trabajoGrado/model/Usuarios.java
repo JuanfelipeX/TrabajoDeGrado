@@ -10,7 +10,6 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
@@ -22,12 +21,16 @@ public class Usuarios {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-        
+    private String id;
+
+    private String nombres;
+    private String apellidos;
     private String alias;
-    private String contrasena;
     private String email;
-    private boolean habilitado;
+    private String contrasena;
+    private String genero;
+    private Integer telefono;
+    private String pais;
 
     public Usuarios() {
     }
@@ -55,13 +58,4 @@ public class Usuarios {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public boolean isHabilitado() {
-        return habilitado;
-    }
-
-    public void setHabilitado(boolean habilitado) {
-        this.habilitado = habilitado;
-    }
-
 }
