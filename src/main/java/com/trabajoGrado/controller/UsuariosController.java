@@ -47,6 +47,7 @@ public class UsuariosController {
         return usuariosService.findAll();
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/usuarios/{id}")
     public Usuarios findById(@PathVariable String id) {
         return usuariosService.findById(id).get();
