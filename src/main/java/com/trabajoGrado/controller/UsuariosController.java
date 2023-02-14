@@ -33,7 +33,10 @@ public class UsuariosController {
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/usuarios")
     public void save(@RequestBody Usuarios usuarios) {
-        usuariosService.save(usuarios);
+        if (usuariosService.exist(usuarios.email)) {
+        } else {
+            usuariosService.save(usuarios);
+        }
     }
 
     @GetMapping("/usuarios")
@@ -51,7 +54,7 @@ public class UsuariosController {
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @RequestMapping(value="/usuarios/correo/{email}")
+    @RequestMapping(value = "/usuarios/correo/{email}")
     public List<Usuarios> findByEmail(@PathVariable String email) {
         return usuariosService.findByEmail(email);
     }
