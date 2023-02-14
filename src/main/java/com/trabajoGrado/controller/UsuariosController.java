@@ -4,13 +4,10 @@
  */
 package com.trabajoGrado.controller;
 
-import com.trabajoGrado.model.Terceros;
 import com.trabajoGrado.model.Usuarios;
-import com.trabajoGrado.service.TercerosService;
 import com.trabajoGrado.service.UsuariosService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -52,7 +49,13 @@ public class UsuariosController {
     public Usuarios findById(@PathVariable String id) {
         return usuariosService.findById(id).get();
     }
-    
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @RequestMapping(value="/usuarios/correo/{email}")
+    public List<Usuarios> findByEmail(@PathVariable String email) {
+        return usuariosService.findByEmail(email);
+    }
+
     @DeleteMapping("/usuarios/{id}")
     public void deleteById(@PathVariable String id) {
         usuariosService.deleteById(id);
