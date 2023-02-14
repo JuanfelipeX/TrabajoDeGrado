@@ -4,6 +4,7 @@
  */
 package com.trabajoGrado.model;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
@@ -26,7 +27,10 @@ public class Usuarios {
     private String nombres;
     private String apellidos;
     private String alias;
-    private String email;
+    
+    @Column(unique = true)
+    public String email;
+    
     private String contrasena;
     private String genero;
     private Integer telefono;
