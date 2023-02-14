@@ -5,6 +5,7 @@
 package com.trabajoGrado.repository;
 
 import com.trabajoGrado.model.Usuarios;
+import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,5 +15,9 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UsuariosRepository extends MongoRepository<Usuarios, String> {
+
+    boolean existsByEmail(String email);
+
+    public List<Usuarios> findByEmail(String email);
 
 }
