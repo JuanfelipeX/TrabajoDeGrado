@@ -32,7 +32,15 @@ public class UsuariosService {
     public Optional<Usuarios> findById(String id) {
         return usuariosRepository.findById(id);
     }
-    
+
+    public List<Usuarios> findByEmail(String email) {
+        return usuariosRepository.findByEmail(email);
+    }
+
+    public boolean exist(String email) {
+        return usuariosRepository.existsByEmail(email);
+    }
+
     public void deleteById(String id) {
         usuariosRepository.deleteById(id);
     }
