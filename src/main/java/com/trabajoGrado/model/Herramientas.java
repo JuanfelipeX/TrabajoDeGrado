@@ -11,28 +11,35 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
  * @author pipes
  */
-@Document(value = "Terceros")
+@Document(value = "herramientas")
 @Data
-@Table(name = "Terceros")
-public class Terceros {
+@Table(name = "herramientas")
+public class Herramientas {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private String id;
 
-    private String nombres;
-    private String apellidos;
-    private String email;
-    private String genero;
-    private Integer telefono;
-    private String pais;
+    private String nombre;
+    private String descripcion;
+    private String url;
+    private String precio;
+    //private Integer etiquetas;
+    private String provedor;
+    private String normas;
 
-    private Usuarios usuarios;
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
 }
