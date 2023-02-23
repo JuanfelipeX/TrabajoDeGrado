@@ -59,14 +59,14 @@ public class UsuariosController {
         return usuariosService.findByEmail(email);
     }
 
-    @DeleteMapping("/usuarios/{id}")
-    public void deleteById(@PathVariable String id) {
-        usuariosService.deleteById(id);
-    }
-
     @PutMapping("usuarios")
     public void update(@RequestBody Usuarios usuarios) {
         usuariosService.save(usuarios);
+    }
+
+    @DeleteMapping("/usuarios/{id}")
+    public void deleteById(@PathVariable String id) {
+        usuariosService.deleteById(id);
     }
 
 }
