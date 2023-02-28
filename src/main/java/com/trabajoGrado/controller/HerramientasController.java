@@ -33,7 +33,10 @@ public class HerramientasController {
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/herramientas")
     public void save(@RequestBody Herramientas herramientas) {
-        herramientasService.save(herramientas);
+        if (herramientasService.exist(herramientas.nombre)) {
+        } else {
+            herramientasService.save(herramientas);
+        }
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
