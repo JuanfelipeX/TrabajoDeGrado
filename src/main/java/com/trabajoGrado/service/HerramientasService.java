@@ -32,6 +32,10 @@ public class HerramientasService {
     public Optional<Herramientas> findById(String id) {
         return herramientasRepository.findById(id);
     }
+    
+     public boolean exist(String email) {
+        return herramientasRepository.existsByNombre(email);
+    }
 
     public Optional<Herramientas> updatedId(Herramientas req, String id) {
         Optional<Herramientas> herramientas = herramientasRepository.findById(id);
