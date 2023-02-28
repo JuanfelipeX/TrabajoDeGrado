@@ -4,11 +4,13 @@
  */
 package com.trabajoGrado.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -19,14 +21,16 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @Document(value = "herramientas")
 @Data
-@Table(name = "herramientas")
+@Table(name = "herramientas", uniqueConstraints = @UniqueConstraint(columnNames = "nombre"))
 public class Herramientas {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
 
-    private String nombre;
+    @Column(unique = true)
+    public String nombre;
+    
     private String descripcion;
     private String url;
     private String precio;

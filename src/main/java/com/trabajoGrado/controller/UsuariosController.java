@@ -33,7 +33,7 @@ public class UsuariosController {
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/usuarios")
     public void save(@RequestBody Usuarios usuarios) {
-        if (usuariosService.exist(usuarios.email)) {
+    if (usuariosService.exist(usuarios.email)) {
         } else {
             usuariosService.save(usuarios);
         }
