@@ -30,11 +30,12 @@ public class Herramientas {
 
     @Column(unique = true)
     public String nombre;
-    
+
     private String descripcion;
     private String url;
     private String precio;
     //private Integer etiquetas;
+    private String imagen;
     private String provedor;
     private String normas;
 
