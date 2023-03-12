@@ -13,9 +13,7 @@ import org.springframework.stereotype.Repository;
  * @author pipes
  */
 @Repository
-public interface HerramientasRepository extends MongoRepository<Herramientas, String>{ 
-    
-     boolean existsByNombre(String nombre);
+public interface HerramientasRepository extends MongoRepository<Herramientas, String> {
 
-    
+    boolean existsByNombre(String nombre);
 }
